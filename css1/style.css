@@ -73,7 +73,7 @@
     z-index: 0;
     content: '';
     position: absolute;
-    background-image: url('../img/ouch.png');
+    background-image: url('../img1/ouch.png');
     width: 141%;
     height: 100%;
     background-position: right;
@@ -633,4 +633,11 @@ left: 5%;
         padding-left: 60px;
     }
 
+}
+
+.sites-navigation {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: 20px;
 }
