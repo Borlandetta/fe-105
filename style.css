@@ -1,0 +1,205 @@
+.container, header, .main {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body menu {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+}
+
+@media (max-width: 768px) {
+  body menu {
+    visibility: hidden;
+    z-index: 2;
+  }
+}
+
+body menu li {
+  list-style-type: none;
+  white-space: nowrap;
+}
+
+body menu li:not(.active) {
+  opacity: 0.5;
+}
+
+body menu li.active {
+  font-weight: bold;
+}
+
+header {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header input, header .burger-menu {
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+header input {
+  z-index: 4;
+  opacity: 0;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+header .burger-menu {
+  z-index: 3;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .main {
+    overflow-x: hidden;
+    height: -webkit-fill-available;
+  }
+  .main > div:last-child {
+    position: relative;
+    height: 100%;
+  }
+  .main > div:last-child img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+  }
+  header {
+    -ms-grid-columns: 1fr 6fr;
+        grid-template-columns: 1fr 6fr;
+  }
+  header menu {
+    grid-auto-flow: row;
+    row-gap: 15px;
+    font-size: 14px;
+    position: fixed;
+    height: 100vh;
+    top: -25px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        align-content: start;
+    padding-top: 100px;
+    padding-right: 30px;
+    background-color: white;
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    right: -30vw;
+    -webkit-transition: .5s linear;
+    transition: .5s linear;
+    width: 30vw;
+    justify-content: start;
+  }
+  header input[type=checkbox]:checked ~ menu {
+    display: -ms-grid;
+    display: grid;
+    visibility: visible;
+    right: 0;
+  }
+  header input[type=checkbox]:checked ~ .burger-menu, header input[type=checkbox]:checked {
+    position: fixed;
+  }
+  header input[type=checkbox]:checked ~ .burger-menu span:first-child {
+    top: 15px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  header input[type=checkbox]:checked ~ .burger-menu span:nth-child(2) {
+    top: 15px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  header input[type=checkbox]:checked ~ .burger-menu span:last-child {
+    opacity: 0;
+  }
+  header .burger-menu {
+    display: block;
+    position: absolute;
+    width: 50px;
+  }
+  header .burger-menu span {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background-color: #458FF6;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    -webkit-transform: none;
+            transform: none;
+  }
+  header .burger-menu span:first-child {
+    top: 0;
+  }
+  header .burger-menu span:nth-child(2) {
+    top: 15px;
+  }
+  header .burger-menu span:last-child {
+    top: 30px;
+  }
+}
+
+.main {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+  margin-top: 40px;
+}
+
+.main > div:first-child {
+  max-width: 480px;
+}
+.main h1 {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: #000000;
+}
+
+.main p {
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 32px;
+  color: #7D7987;
+}
+
+.main img {
+  width: 100%;
+}
+
+.main button {
+  background-color: #458FF6;
+  border-radius: 55px;
+  padding: 7px 15px;
+  color: white;
+  border: none;
+}
+/*# sourceMappingURL=style.css.map */
